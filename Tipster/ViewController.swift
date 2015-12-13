@@ -25,21 +25,43 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
     @IBAction func onEditingChanged(sender: AnyObject) {
+        updateValue()
+    }
+    
+    func updateValue()
+    {
         var tipPercentages = [0.18, 0.2, 0.22]
-        let tipPercentage = tipPercentages[tipControl.selectedSegmentIndex]
+        var tipPercentage = tipPercentages[tipControl.selectedSegmentIndex]
         //var billAmount = billField.text._bridgeToObjectiveC().doubleValue
-        
-        let billAmount = NSString(string: billField.text!).doubleValue
-        let tip = billAmount * tipPercentage
-        let total = billAmount + tip
+        var billAmount = NSString(string: billField.text!).doubleValue
+        var tip = billAmount * tipPercentage
+        var total = billAmount + tip
         
         tipLabel.text = "$\(tip)"
         totalLabel.text = "$\(total)"
         tipLabel.text = String(format: "$%.2f", tip)
         totalLabel.text = String(format: "$%.2f", total)
     }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        let defaults = NSUserDefaults.standardUserDefaults()
+        var tipValue = defaults.integerForKey("tipValue")
+        // println("got default tip: \(tipValue)")
+        switch tipValue {
+        case 0...2:
+            tipControl.selectedSegmentIndex = tipValue
+        default:
+            tipControl.selectedSegmentIndex = 0
+        }
+        
+        // Recalculate the tip
+        updateValue()
+        
+    }
+
 
     @IBAction func onTap(sender: AnyObject) {
         view.endEditing(true)

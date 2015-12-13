@@ -9,7 +9,9 @@
 import UIKit
 
 class SettingsViewController: UIViewController {
-
+    
+    @IBOutlet weak var defaultLabel: UILabel!
+    @IBOutlet weak var defaultSegUI: UISegmentedControl!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -20,7 +22,29 @@ class SettingsViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    @IBAction func pickDefault(sender: AnyObject) {
+        var tipPercentages = [18,20,22]
+        var tipPercentage = tipPercentages[defaultSegUI.selectedSegmentIndex]
+        defaultLabel.text = "Default Tip: \(tipPercentage)%"
+        
+        let defaults = NSUserDefaults.standardUserDefaults()
+        defaults.setInteger(sender.selectedSegmentIndex, forKey: "tipValue")
+        defaults.synchronize()
+    }
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        let defaults = NSUserDefaults.standardUserDefaults()
+        var tipValue = defaults.integerForKey("tipValue")
+        //  println("got default tip: \(tipValue)")
+        switch tipValue {
+        case 0...2:
+            defaultSegUI.selectedSegmentIndex = tipValue
+        default:
+            defaultSegUI.selectedSegmentIndex = 0
+        }
+    }
 
     /*
     // MARK: - Navigation
