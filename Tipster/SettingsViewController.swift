@@ -12,6 +12,8 @@ class SettingsViewController: UIViewController {
     
     @IBOutlet weak var defaultLabel: UILabel!
     @IBOutlet weak var defaultSegUI: UISegmentedControl!
+    @IBOutlet weak var colorSegUI: UISegmentedControl!
+    @IBOutlet var viewColor: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -22,6 +24,7 @@ class SettingsViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
     @IBAction func pickDefault(sender: AnyObject) {
         var tipPercentages = [18,20,22]
         var tipPercentage = tipPercentages[defaultSegUI.selectedSegmentIndex]
@@ -30,6 +33,39 @@ class SettingsViewController: UIViewController {
         let defaults = NSUserDefaults.standardUserDefaults()
         defaults.setInteger(sender.selectedSegmentIndex, forKey: "tipValue")
         defaults.synchronize()
+        
+    }
+    
+    func updateColor()
+    {
+        let defaultColor = NSUserDefaults.standardUserDefaults()
+        var color = defaultColor.integerForKey("color")
+        switch color{
+        case 0...3:
+            colorSegUI.selectedSegmentIndex = color
+        default:
+            colorSegUI.selectedSegmentIndex = 0
+        }
+        
+        if(colorSegUI.selectedSegmentIndex == 0) {
+            viewColor.backgroundColor = UIColor.whiteColor()
+        }
+        if(colorSegUI.selectedSegmentIndex == 1) {
+            viewColor.backgroundColor = UIColor.grayColor()
+        }
+        if(colorSegUI.selectedSegmentIndex == 2) {
+            viewColor.backgroundColor = UIColor.greenColor()
+        }
+        if(colorSegUI.selectedSegmentIndex == 3){
+            viewColor.backgroundColor = UIColor.blueColor()
+        }
+
+    }
+    @IBAction func pickColor(sender: AnyObject) {
+        let defaultColor = NSUserDefaults.standardUserDefaults()
+        defaultColor.setInteger(sender.selectedSegmentIndex, forKey: "color")
+        defaultColor.synchronize()
+        updateColor()
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -37,23 +73,14 @@ class SettingsViewController: UIViewController {
         
         let defaults = NSUserDefaults.standardUserDefaults()
         var tipValue = defaults.integerForKey("tipValue")
-        //  println("got default tip: \(tipValue)")
         switch tipValue {
         case 0...2:
             defaultSegUI.selectedSegmentIndex = tipValue
         default:
             defaultSegUI.selectedSegmentIndex = 0
         }
+        
+        let defaultColor = NSUserDefaults.standardUserDefaults()
+        updateColor()
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

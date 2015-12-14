@@ -13,12 +13,16 @@ class ViewController: UIViewController {
     @IBOutlet weak var tipControl: UISegmentedControl!
     @IBOutlet weak var tipLabel: UILabel!
     @IBOutlet weak var billField: UITextField!
+    @IBOutlet weak var splitBy: UITextField!
     @IBOutlet weak var totalLabel: UILabel!
+    @IBOutlet weak var splitLabel: UILabel!
+    @IBOutlet var colorBack: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         tipLabel.text = "$0.00"
         totalLabel.text = "$0.00"
+        splitLabel.text = "$0.00"
     }
 
     override func didReceiveMemoryWarning() {
@@ -35,13 +39,20 @@ class ViewController: UIViewController {
         var tipPercentage = tipPercentages[tipControl.selectedSegmentIndex]
         //var billAmount = billField.text._bridgeToObjectiveC().doubleValue
         var billAmount = NSString(string: billField.text!).doubleValue
+        var splitNumber = NSString(string: splitBy.text!).doubleValue
         var tip = billAmount * tipPercentage
         var total = billAmount + tip
+        if(splitNumber == 0) {
+            splitNumber = 1
+        }
+        var split = total / splitNumber
         
         tipLabel.text = "$\(tip)"
         totalLabel.text = "$\(total)"
+        splitLabel.text = "$\(split)"
         tipLabel.text = String(format: "$%.2f", tip)
         totalLabel.text = String(format: "$%.2f", total)
+        splitLabel.text = String(format: "$%.2f", split)
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -49,7 +60,6 @@ class ViewController: UIViewController {
         
         let defaults = NSUserDefaults.standardUserDefaults()
         var tipValue = defaults.integerForKey("tipValue")
-        // println("got default tip: \(tipValue)")
         switch tipValue {
         case 0...2:
             tipControl.selectedSegmentIndex = tipValue
@@ -60,7 +70,24 @@ class ViewController: UIViewController {
         // Recalculate the tip
         updateValue()
         
+        let defaultColor = NSUserDefaults.standardUserDefaults()
+        var color = defaultColor.integerForKey("color")
+        
+        if(color == 0) {
+            colorBack.backgroundColor = UIColor.whiteColor()
+        }
+        if(color == 1) {
+            colorBack.backgroundColor = UIColor.grayColor()
+        }
+        if(color == 2) {
+            colorBack.backgroundColor = UIColor.greenColor()
+        }
+        if(color == 3){
+            colorBack.backgroundColor = UIColor.blueColor()
+        }
     }
+    
+    
 
 
     @IBAction func onTap(sender: AnyObject) {
