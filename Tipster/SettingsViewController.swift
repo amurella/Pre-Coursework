@@ -54,7 +54,7 @@ class SettingsViewController: UIViewController {
             viewColor.backgroundColor = UIColor.grayColor()
         }
         if(colorSegUI.selectedSegmentIndex == 2) {
-            viewColor.backgroundColor = UIColor.greenColor()
+            viewColor.backgroundColor = UIColor.magentaColor()
         }
         if(colorSegUI.selectedSegmentIndex == 3){
             viewColor.backgroundColor = UIColor.blueColor()
@@ -83,4 +83,5 @@ class SettingsViewController: UIViewController {
         let defaultColor = NSUserDefaults.standardUserDefaults()
         updateColor()
     }
+    
 }

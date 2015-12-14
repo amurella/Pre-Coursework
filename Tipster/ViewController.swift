@@ -16,6 +16,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var splitBy: UITextField!
     @IBOutlet weak var totalLabel: UILabel!
     @IBOutlet weak var splitLabel: UILabel!
+    @IBOutlet weak var viewColor: UIView!
     @IBOutlet var colorBack: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +24,7 @@ class ViewController: UIViewController {
         tipLabel.text = "$0.00"
         totalLabel.text = "$0.00"
         splitLabel.text = "$0.00"
+        billField.becomeFirstResponder()
     }
 
     override func didReceiveMemoryWarning() {
@@ -37,7 +39,6 @@ class ViewController: UIViewController {
     {
         var tipPercentages = [0.18, 0.2, 0.22]
         var tipPercentage = tipPercentages[tipControl.selectedSegmentIndex]
-        //var billAmount = billField.text._bridgeToObjectiveC().doubleValue
         var billAmount = NSString(string: billField.text!).doubleValue
         var splitNumber = NSString(string: splitBy.text!).doubleValue
         var tip = billAmount * tipPercentage
@@ -53,6 +54,18 @@ class ViewController: UIViewController {
         tipLabel.text = String(format: "$%.2f", tip)
         totalLabel.text = String(format: "$%.2f", total)
         splitLabel.text = String(format: "$%.2f", split)
+        
+        fadeIn()
+    }
+    
+    func fadeIn() {
+        self.totalLabel.alpha = 0
+        self.splitLabel.alpha = 0
+        UIView.animateWithDuration(0.4,
+            animations: {
+                self.totalLabel.alpha = 1
+                self.splitLabel.alpha = 1
+            })
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -69,6 +82,7 @@ class ViewController: UIViewController {
         
         // Recalculate the tip
         updateValue()
+        fadeIn()
         
         let defaultColor = NSUserDefaults.standardUserDefaults()
         var color = defaultColor.integerForKey("color")
@@ -80,7 +94,7 @@ class ViewController: UIViewController {
             colorBack.backgroundColor = UIColor.grayColor()
         }
         if(color == 2) {
-            colorBack.backgroundColor = UIColor.greenColor()
+            colorBack.backgroundColor = UIColor.magentaColor()
         }
         if(color == 3){
             colorBack.backgroundColor = UIColor.blueColor()
