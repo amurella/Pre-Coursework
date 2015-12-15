@@ -21,6 +21,7 @@
 		15EE82521C1F707300789FBD /* tip1.png in Resources */ = {isa = PBXBuildFile; fileRef = 15EE82511C1F707300789FBD /* tip1.png */; };
 		15EE82541C1F707A00789FBD /* tip2.png in Resources */ = {isa = PBXBuildFile; fileRef = 15EE82531C1F707A00789FBD /* tip2.png */; };
 		15EE82561C1F708000789FBD /* tip3.png in Resources */ = {isa = PBXBuildFile; fileRef = 15EE82551C1F708000789FBD /* tip3.png */; };
+		15EE825A1C1F925800789FBD /* Tipster.gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 15EE82591C1F925800789FBD /* Tipster.gitignore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		15EE82511C1F707300789FBD /* tip1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tip1.png; sourceTree = "<group>"; };
 		15EE82531C1F707A00789FBD /* tip2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tip2.png; sourceTree = "<group>"; };
 		15EE82551C1F708000789FBD /* tip3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tip3.png; sourceTree = "<group>"; };
+		15EE82591C1F925800789FBD /* Tipster.gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Tipster.gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 				15338DD61C1A04CB00446A2C /* AppDelegate.swift */,
 				15338DD81C1A04CB00446A2C /* ViewController.swift */,
 				15338DDA1C1A04CB00446A2C /* Main.storyboard */,
+				15EE82591C1F925800789FBD /* Tipster.gitignore */,
 				15338DF61C1A19CC00446A2C /* SettingsViewController.swift */,
 				15338DDD1C1A04CB00446A2C /* Images.xcassets */,
 				15338DDF1C1A04CB00446A2C /* LaunchScreen.xib */,
@@ -225,6 +228,7 @@
 				15EE824C1C1F6A9900789FBD /* AppCover.xcassets in Resources */,
 				15EE824A1C1F670800789FBD /* AppCover.xcassets in Resources */,
 				15EE824E1C1F6C6100789FBD /* tip.png in Resources */,
+				15EE825A1C1F925800789FBD /* Tipster.gitignore in Resources */,
 				15338DE11C1A04CB00446A2C /* LaunchScreen.xib in Resources */,
 				15338DDE1C1A04CB00446A2C /* Images.xcassets in Resources */,
 			);
