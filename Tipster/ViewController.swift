@@ -24,6 +24,7 @@ class ViewController: UIViewController {
         tipLabel.text = "$0.00"
         totalLabel.text = "$0.00"
         splitLabel.text = "$0.00"
+       // entireFadeIn()
         billField.becomeFirstResponder()
     }
 
@@ -58,6 +59,27 @@ class ViewController: UIViewController {
         fadeIn()
     }
     
+   /* func entireFadeIn() {
+        self.totalLabel.alpha = 0
+        self.splitLabel.alpha = 0
+        self.tipControl.alpha = 0
+        self.tipLabel.alpha = 0
+        self.splitLabel.alpha = 0
+        self.billField.alpha = 1
+        self.colorBack.alpha = 0
+        UIView.animateWithDuration(0.4,
+            animations: {
+                self.totalLabel.alpha = 1
+                self.splitLabel.alpha = 1
+                self.totalLabel.alpha = 1
+                self.splitLabel.alpha = 1
+                self.tipControl.alpha = 1
+                self.tipLabel.alpha = 1
+                self.splitLabel.alpha = 1
+                self.billField.alpha = 1
+                self.colorBack.alpha = 1
+        })
+    }*/
     func fadeIn() {
         self.totalLabel.alpha = 0
         self.splitLabel.alpha = 0
@@ -91,18 +113,26 @@ class ViewController: UIViewController {
             colorBack.backgroundColor = UIColor.whiteColor()
         }
         if(color == 1) {
+            billField.textColor = UIColor.grayColor()
+            splitBy.textColor = UIColor.grayColor()
             colorBack.backgroundColor = UIColor.grayColor()
         }
         if(color == 2) {
+            billField.textColor = UIColor.magentaColor()
+            splitBy.textColor = UIColor.magentaColor()
             colorBack.backgroundColor = UIColor.magentaColor()
         }
         if(color == 3){
+            billField.textColor = UIColor.blueColor()
+            splitBy.textColor = UIColor.blueColor()
             colorBack.backgroundColor = UIColor.blueColor()
         }
     }
     
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+    }
     
-
 
     @IBAction func onTap(sender: AnyObject) {
         view.endEditing(true)

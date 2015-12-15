@@ -14,6 +14,8 @@
 		15338DE11C1A04CB00446A2C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 15338DDF1C1A04CB00446A2C /* LaunchScreen.xib */; };
 		15338DED1C1A04CB00446A2C /* TipsterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15338DEC1C1A04CB00446A2C /* TipsterTests.swift */; };
 		15338DF71C1A19CC00446A2C /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15338DF61C1A19CC00446A2C /* SettingsViewController.swift */; };
+		158065A11C20B37C00F2D21D /* launchimage1.png in Resources */ = {isa = PBXBuildFile; fileRef = 158065A01C20B37C00F2D21D /* launchimage1.png */; };
+		158065A31C20B38100F2D21D /* launchimage2.png in Resources */ = {isa = PBXBuildFile; fileRef = 158065A21C20B38100F2D21D /* launchimage2.png */; };
 		15EE824A1C1F670800789FBD /* AppCover.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 15EE82491C1F670800789FBD /* AppCover.xcassets */; };
 		15EE824C1C1F6A9900789FBD /* AppCover.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 15EE824B1C1F6A9900789FBD /* AppCover.xcassets */; };
 		15EE824E1C1F6C6100789FBD /* tip.png in Resources */ = {isa = PBXBuildFile; fileRef = 15EE824D1C1F6C6100789FBD /* tip.png */; };
@@ -46,6 +48,8 @@
 		15338DEB1C1A04CB00446A2C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		15338DEC1C1A04CB00446A2C /* TipsterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipsterTests.swift; sourceTree = "<group>"; };
 		15338DF61C1A19CC00446A2C /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		158065A01C20B37C00F2D21D /* launchimage1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = launchimage1.png; sourceTree = "<group>"; };
+		158065A21C20B38100F2D21D /* launchimage2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = launchimage2.png; sourceTree = "<group>"; };
 		15EE82491C1F670800789FBD /* AppCover.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = AppCover.xcassets; sourceTree = "<group>"; };
 		15EE824B1C1F6A9900789FBD /* AppCover.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = AppCover.xcassets; sourceTree = "<group>"; };
 		15EE824D1C1F6C6100789FBD /* tip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tip.png; path = TipsterTests/tip.png; sourceTree = SOURCE_ROOT; };
@@ -113,9 +117,11 @@
 			isa = PBXGroup;
 			children = (
 				15EE82511C1F707300789FBD /* tip1.png */,
+				158065A21C20B38100F2D21D /* launchimage2.png */,
+				158065A01C20B37C00F2D21D /* launchimage1.png */,
 				15EE824D1C1F6C6100789FBD /* tip.png */,
-				15EE82551C1F708000789FBD /* tip3.png */,
 				15EE82531C1F707A00789FBD /* tip2.png */,
+				15EE82551C1F708000789FBD /* tip3.png */,
 				15EE824F1C1F6FBA00789FBD /* tip copy.png */,
 				15338DD51C1A04CB00446A2C /* Info.plist */,
 			);
@@ -226,10 +232,12 @@
 				15EE82541C1F707A00789FBD /* tip2.png in Resources */,
 				15338DDC1C1A04CB00446A2C /* Main.storyboard in Resources */,
 				15EE824C1C1F6A9900789FBD /* AppCover.xcassets in Resources */,
+				158065A31C20B38100F2D21D /* launchimage2.png in Resources */,
 				15EE824A1C1F670800789FBD /* AppCover.xcassets in Resources */,
 				15EE824E1C1F6C6100789FBD /* tip.png in Resources */,
 				15EE825A1C1F925800789FBD /* Tipster.gitignore in Resources */,
 				15338DE11C1A04CB00446A2C /* LaunchScreen.xib in Resources */,
+				158065A11C20B37C00F2D21D /* launchimage1.png in Resources */,
 				15338DDE1C1A04CB00446A2C /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

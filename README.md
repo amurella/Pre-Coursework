@@ -4,7 +4,7 @@ Tipster is a tip calculator application for iOS.
 
 Submitted by: Akhila Murella
 
-Time spent: 13 hours spent in total
+Time spent: 14 hours spent in total
 
 ## User Stories
 
@@ -22,12 +22,13 @@ The following **additional** features are implemented:
 - Additional: User can pick a background theme color
 - Additional: Can split the check in multiple ways
 - Additional: Displays the value of the default tip
+- Additional: Has an app icon and different colored launch image screen
 
 ## Video Walkthrough 
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/TemuREB.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='http://i.imgur.com/3QR6gve.gifv' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
